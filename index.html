@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novos Pedidos em Tempo Real</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+</head>
+<body>
+    <canvas id="aurora-canvas"></canvas>
+    <div class="container">
+        <header>
+            <h1>Novos Pedidos em Tempo Real</h1>
+            <div class="status-indicator">
+                <span class="status-dot" id="connectionStatus"></span>
+                <span id="statusText">Conectando...</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="table-wrapper">
+                <table id="pedidosTable">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Nome do Cliente</th>
+                            <th>Pedido Detalhado</th>
+                            <th>Endereço de Entrega</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pedidosTableBody">
+                        <tr>
+                            <td colspan="5" class="loading">Carregando pedidos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <p>Nenhum pedido pendente no momento.</p>
+            </div>
+        </main>
+    </div>
+
+    <script src="aurora.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
